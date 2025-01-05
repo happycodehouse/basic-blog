@@ -1,0 +1,43 @@
+
+@import "https://api.fontshare.com/v2/css?f[]=beVietnam-pro@1&display=swap";
+
+*{
+  box-sizing: border-box;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  max-width: 1140px;
+  height: 100%;
+  margin: 0 auto;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.header-inner h1 {
+  font-size: 18px;
+}
