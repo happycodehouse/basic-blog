@@ -1,9 +1,11 @@
 
 @import "https://api.fontshare.com/v2/css?f[]=beVietnam-pro@1&display=swap";
+@import "https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css";
 
 *{
   box-sizing: border-box;
   font-family: 'Be Vietnam Pro', sans-serif;
+  color: #0a0a0a;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -19,6 +21,7 @@ ul {
 
 body {
   margin: 0;
+  background-color: #fafafa;
 }
 
 header {
@@ -40,4 +43,101 @@ header {
 
 .header-inner h1 {
   font-size: 18px;
+}
+
+.container {
+  margin-top: 100px;
+}
+
+.sec1 {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.sort-btn-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.sort-btn-wrap > span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.sort-btn {
+  margin-left: auto;
+  border: 1px solid #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+
+}
+
+.sort-btn span {
+  position: relative;
+  padding: 8px 16px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.sort-btn span:nth-child(n+2)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #1a1a1a;
+}
+
+.sort-btn span.active {
+  background-color: #1a1a1a;
+}
+
+.sort-btn span.active i {
+  color: #fff;
+}
+
+.post-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.post-list li {
+  width: calc((100% - 24px) / 3);
+  padding: 18px;
+  border: 1px solid #1a1a1a;
+}
+
+.post-list .title-area {
+  margin-bottom: 28px;
+}
+
+.post-list .title-area h3 {
+  margin-bottom:4px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.post-list .title-area span {
+  color: #999;
+}
+
+.post-list .like-area {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.post-list .like-area i {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.post-list .like-area span {
+  font-size: 14px;
 }
