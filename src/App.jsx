@@ -30,27 +30,27 @@ function App() {
 
     const sortAlphabet = () => {
         setPost((prev) => {
-            const sortAlphabet = [...prev].sort((a, b) => {
+            const sortNewAlphabet = [...prev].sort((a, b) => {
                 return a.title.localeCompare(b.title);
             });
 
-            return sortAlphabet;
+            return sortNewAlphabet;
         });
     }
 
     const sortDate = () => {
         setPost((prev) => {
-            const sortDate = [...prev].sort((a, b) => {
+            const sortNewDate = [...prev].sort((a, b) => {
                 const dateA = new Date(`20${a.date.split('/')[2]}`, a.date.split('/')[1] - 1, a.date.split('/')[0]);
                 const dateB = new Date(`20${b.date.split('/')[2]}`, b.date.split('/')[1] - 1, b.date.split('/')[0]);
                 return dateB - dateA;
             });
 
-            return sortDate;
+            return sortNewDate;
         });
     };
 
-    const [like, setLike] = useState(new Array(post.length).fill(0));
+    const [like, setLike] = useState(new Array(initialPosts.length).fill(0));
 
     return (
         <>
@@ -63,7 +63,7 @@ function App() {
                 <div className={"sec sec1"}>
                     <div className={"inner"}>
                         <div className={"sort-btn-wrap"}>
-                            <span>Sort: {sortType}</span>
+                            <span>Sorted: {sortType}</span>
                             <div className={"sort-btn"}>
                                 <span
                                     className={classNames( sortType == "Alphabetically" ? "active" : "" )}
@@ -73,9 +73,9 @@ function App() {
                                     }}
                                 ><i className={"xi-list"}></i></span>
                                 <span
-                                    className={classNames( sortType == "By Latest Date" ? "active" : "" )}
+                                    className={classNames( sortType == "Latest Date" ? "active" : "" )}
                                     onClick={() => {
-                                        setSortType("By Latest Date");
+                                        setSortType("Latest Date");
                                         sortDate();
                                     }}
                                 ><i className={"xi-calendar"}></i></span>
@@ -87,14 +87,17 @@ function App() {
                         <ul className={"post-list"}>
                             {post.map((item, index) => (
                                 <li key={index}>
-                                    <div className={"title-area"}>
+                                    <div className={"top-area"}>
                                         <h3>{item.title}</h3>
+                                    </div>
+                                    <div className={"bottom-area"}>
                                         <span>{item.date}</span>
+                                        <div className={"like-area"}>
+                                            <i className={"xi-heart-o"}></i>
+                                            <span>{like[index]}</span>
+                                        </div>
                                     </div>
-                                    <div className={"like-area"}>
-                                        <i className={"xi-heart-o"}></i>
-                                        <span>{like[index]}</span>
-                                    </div>
+
                                 </li>
                             ))}
                         </ul>
