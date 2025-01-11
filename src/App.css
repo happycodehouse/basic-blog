@@ -101,12 +101,14 @@ header {
 
 .post-list {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
 }
 
 .post-list li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: calc((100% - 24px) / 3);
   padding: 18px;
   border: 1px solid #1a1a1a;
@@ -153,4 +155,10 @@ header {
 
 .post-list .like-area span {
   font-size: 14px;
+}
+
+.add-post-area {
+  width: calc((100% - 24px) / 3);
+  padding: 18px;
+  border: 1px solid #1a1a1a;
 }

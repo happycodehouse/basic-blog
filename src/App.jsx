@@ -97,10 +97,22 @@ function App() {
                                             <span>{like[index]}</span>
                                         </div>
                                     </div>
-
                                 </li>
                             ))}
+                            <li>
+                                <div className={"top-area"}>
+                                    <input type="text"/>
+
+                                </div>
+                                <div className={"bottom-area"}>
+                                    <span></span>
+                                    <div className={"add-post-btn-wrap"}>
+                                        <button type={"button"}>ADD</button>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
+
                     </div>
                 </div>
             </div>
