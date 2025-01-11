@@ -1,14 +1,13 @@
-
 @import "https://api.fontshare.com/v2/css?f[]=beVietnam-pro@1&display=swap";
 @import "https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css";
 
-*{
+* {
   box-sizing: border-box;
   font-family: 'Be Vietnam Pro', sans-serif;
   color: #0a0a0a;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 0;
 }
@@ -17,6 +16,12 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+input, button {
+  outline: 0;
+  background: unset;
+  border: 0;
 }
 
 body {
@@ -32,7 +37,7 @@ header {
   height: 100px;
 }
 
-.header-inner {
+.header_inner {
   display: flex;
   align-items: center;
   max-width: 1140px;
@@ -41,7 +46,7 @@ header {
   border-bottom: 1px solid #1a1a1a;
 }
 
-.header-inner h1 {
+.header_inner h1 {
   font-size: 18px;
 }
 
@@ -54,34 +59,33 @@ header {
   margin: 0 auto;
 }
 
-.sort-btn-wrap {
+.sort_btn_wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 0;
 }
 
-.sort-btn-wrap > span {
+.sort_btn_wrap > span {
   font-size: 14px;
   font-weight: 500;
 }
 
-.sort-btn {
+.sort_btn {
   margin-left: auto;
   border: 1px solid #1a1a1a;
   border-radius: 8px;
   overflow: hidden;
-
 }
 
-.sort-btn span {
+.sort_btn span {
   position: relative;
   padding: 8px 16px;
   font-size: 24px;
   cursor: pointer;
 }
 
-.sort-btn span:nth-child(n+2)::before {
+.sort_btn span:nth-child(n+2)::before {
   content: '';
   position: absolute;
   top: 0;
@@ -91,74 +95,132 @@ header {
   background-color: #1a1a1a;
 }
 
-.sort-btn span.active {
+.sort_btn span.active {
   background-color: #1a1a1a;
 }
 
-.sort-btn span.active i {
+.sort_btn span.active i {
   color: #fff;
 }
 
-.post-list {
+.post_list {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
 
-.post-list li {
+.post_list li {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: calc((100% - 24px) / 3);
   padding: 18px;
   border: 1px solid #1a1a1a;
-  cursor: pointer;
 }
 
-.post-list li:hover h3 {
-  text-decoration: underline;
-}
-
-.post-list .top-area {
+.post_list .top_area {
   margin-bottom: 48px;
 }
 
-.post-list .top-area h3 {
-  margin-bottom:4px;
+.post_list .top_area h3 {
+  display: inline-block;
+  margin-bottom: 4px;
   font-size: 20px;
   font-weight: 600;
   cursor: pointer;
 }
 
-.post-list .bottom-area {
+.post_list .top_area h3:hover {
+  text-decoration: underline;
+}
+
+.post_list .bottom_area {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.post-list .bottom-area > span {
+.post_list .bottom_area > span {
   font-size: 12px;
   color: #999;
 }
 
-.post-list .like-area {
+.post_list .bottom_area > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.post_list .like_area {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 4px;
 }
 
-.post-list .like-area i {
+.post_list .like_area i {
   font-size: 20px;
   cursor: pointer;
 }
 
-.post-list .like-area span {
+.post_list .like_area span {
   font-size: 14px;
 }
 
-.add-post-area {
+.add_post_area {
   width: calc((100% - 24px) / 3);
   padding: 18px;
   border: 1px solid #1a1a1a;
+}
+
+.add_post_area input[type=text] {
+  width: 100%;
+  height: 36px;
+  background: transparent;
+  border-bottom: 1px solid #1a1a1a;
+  outline: 0;
+  font-size: 14px;
+}
+
+.add_post_area input[type=text]:focus {
+  border-bottom: 2px solid #1a1a1a;
+}
+
+.add_post_area input[type=text]::placeholder {
+  color: #999999;
+}
+
+.add_post_area button {
+  padding: 4px 12px;
+  border: 1px solid #1a1a1a;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.add_post_area button:hover {
+  opacity: 1;
+}
+
+.remove_post_btn_wrap button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #1a1a1a;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.remove_post_btn_wrap button:hover {
+  opacity: 0.5;
+}
+
+.remove_post_btn_wrap button i {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
 }
