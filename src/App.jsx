@@ -17,6 +17,9 @@ function App() {
     ]
 
     const [post, setPost] = useState([]);
+    const [like, setLike] = useState(new Array(initialPosts.length).fill(0));
+    const [isRemove, setIsRemove] = useState(new Array(initialPosts.length).fill(false));
+
 
     useEffect(() => {
         const init = [...initialPosts].sort((a, b) => {
@@ -26,7 +29,6 @@ function App() {
     }, []); // 빈 배열을 전달하여 컴포넌트가 처음 마운트될 때만 실행
 
     const [sortType, setSortType] = useState("Alphabetically");
-    const [sortActive, setSortActive] = useState("Alphabetically");
 
     const sortAlphabet = () => {
         setPost((prev) => {
@@ -50,7 +52,6 @@ function App() {
         });
     };
 
-    const [like, setLike] = useState(new Array(initialPosts.length).fill(0));
     const [currentDate, setCurrentDate] = useState("");
 
     useEffect(() => {
@@ -99,32 +100,44 @@ function App() {
                         </div>
                         <ul className={"post_list"}>
                             {post.map((item, index) => (
-                                <li key={index}>
-                                    <div className={"top_area"}>
-                                        <h3>{item.title}</h3>
-                                    </div>
-                                    <div className={"bottom_area"}>
-                                        <span>{item.date}</span>
-                                        <div>
-                                            <div
-                                                className={"like_area"}
-                                                onClick={()=> {
-                                                    setLike((i)=> {
-                                                       let copyLike = [...i];
-                                                       copyLike[index] += 1;
-                                                       return copyLike;
-                                                    });
-                                                    console.log("aaa")
-                                            }}>
-                                                <i className={"xi-heart-o"}></i>
-                                                <span>{like[index]}</span>
-                                            </div>
-                                            <div className={"remove_post_btn_wrap"}>
-                                                <button type={"button"}><i className={"xi-close"}></i></button>
+                                !isRemove[index] && (
+                                    <li key={index}>
+                                        <div className={"top_area"}>
+                                            <h3>{item.title}</h3>
+                                        </div>
+                                        <div className={"bottom_area"}>
+                                            <span>{item.date}</span>
+                                            <div>
+                                                <div
+                                                    className={"like_area"}
+                                                    onClick={()=> {
+                                                        setLike((i)=> {
+                                                            let copyLike = [...i];
+                                                            copyLike[index] += 1;
+                                                            return copyLike;
+                                                        });
+                                                    }}>
+                                                    <i className={"xi-heart-o"}></i>
+                                                    <span>{like[index]}</span>
+                                                </div>
+                                                <div className={"remove_post_btn_wrap"}>
+                                                    <button
+                                                        type={"button"}
+                                                        onClick={()=> {
+                                                            setIsRemove((prev)=> {
+                                                                let copyIsRemove = [...prev];
+                                                                isRemove[index] = true;
+                                                                return copyIsRemove;
+                                                            })
+                                                        }}
+                                                    >
+                                                        <i className={"xi-close"}></i>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </li>
+                                    </li>
+                                )
                             ))}
                             <li className={"add_post_area"}>
                                 <div className={"top_area"}>
