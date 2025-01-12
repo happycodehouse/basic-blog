@@ -35,6 +35,7 @@ header {
   left: 0;
   width: 100%;
   height: 100px;
+  background-color: #fafafa;
 }
 
 .header_inner {
@@ -228,3 +229,4 @@ header {
   font-weight: 700;
   color: #1a1a1a;
 }
+
