@@ -69,7 +69,7 @@ function App() {
         <>
             <header>
                 <div className={"header_inner"}>
-                    <h1>please leave me a sentence!</h1>
+                    <h1>SEND ME A MESSAGE</h1>
                 </div>
             </header>
             <div className={"container"}>
@@ -106,7 +106,16 @@ function App() {
                                     <div className={"bottom_area"}>
                                         <span>{item.date}</span>
                                         <div>
-                                            <div className={"like_area"}>
+                                            <div
+                                                className={"like_area"}
+                                                onClick={()=> {
+                                                    setLike((i)=> {
+                                                       let copyLike = [...i];
+                                                       copyLike[index] += 1;
+                                                       return copyLike;
+                                                    });
+                                                    console.log("aaa")
+                                            }}>
                                                 <i className={"xi-heart-o"}></i>
                                                 <span>{like[index]}</span>
                                             </div>
@@ -119,7 +128,12 @@ function App() {
                             ))}
                             <li className={"add_post_area"}>
                                 <div className={"top_area"}>
-                                    <input type="text" placeholder={"SEND ME A MESSAGE!"}/>
+                                    <input type="text"
+                                           placeholder={"SEND ME A MESSAGE!"}
+                                           onChange={(e)=> {
+                                                console.log(e.target.value);
+                                            }}
+                                    />
                                 </div>
                                 <div className={"bottom_area"}>
                                     <span>{currentDate}</span>

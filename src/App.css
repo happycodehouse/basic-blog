@@ -216,7 +216,11 @@ header {
 }
 
 .remove_post_btn_wrap button:hover {
-  opacity: 0.5;
+  background-color: #1a1a1a;
+}
+
+.remove_post_btn_wrap button:hover i {
+  color: #fff;
 }
 
 .remove_post_btn_wrap button i {
