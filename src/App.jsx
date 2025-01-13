@@ -67,7 +67,7 @@ function App() {
         const month = String(date.getMonth() + 1).padStart(2, '0'); // 월
         const day = String(date.getDate()).padStart(2, '0'); // 일
 
-        return `${year}/${month}/${day}`;
+        return `${day}/${month}/${year}`;
     };
 
     return (
