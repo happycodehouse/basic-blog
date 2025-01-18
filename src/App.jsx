@@ -20,6 +20,7 @@ function App() {
     const [like, setLike] = useState(new Array(initialPosts.length).fill(0));
     const [isRemove, setIsRemove] = useState(new Array(initialPosts.length).fill(false));
     const [newMsg, setNewMsg] = useState("");
+    const [isMsgShow, setIsMsgShow] = useState(false);
 
 
     useEffect(() => {
@@ -67,7 +68,7 @@ function App() {
         const month = String(date.getMonth() + 1).padStart(2, '0'); // 월
         const day = String(date.getDate()).padStart(2, '0'); // 일
 
-        return `${year}/${month}/${day}`;
+        return `${day}/${month}/${year}`;
     };
 
     return (

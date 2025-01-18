@@ -230,3 +230,11 @@ header {
   color: #1a1a1a;
 }
 
+.message_window {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  border: 1px solid red;
+}
