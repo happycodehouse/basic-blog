@@ -22,6 +22,10 @@ function App() {
     const [newMsg, setNewMsg] = useState("");
     const [isMsgShow, setIsMsgShow] = useState(false);
 
+    const showMsgWindow = () => {
+        setIsMsgShow(prevState => !prevState);
+        console.log(isMsgShow);
+    }
 
     useEffect(() => {
         // 날짜 기준으로 초기 포스트 정렬
@@ -100,15 +104,12 @@ function App() {
                                 ><i className={"xi-calendar"}></i></span>
                             </div>
                         </div>
-                        <div className={"new_post_area"}>
-                            <span>{}</span>
-                        </div>
                         <ul className={"post_list"}>
                             {post.map((item, index) => (
                                 !isRemove[index] && (
                                     <li key={index}>
                                         <div className={"top_area"}>
-                                            <h3>{item.msg}</h3>
+                                            <h3 onClick={()=> {showMsgWindow()}}>{item.msg}</h3>
                                         </div>
                                         <div className={"bottom_area"}>
                                             <span>{item.date}</span>
@@ -178,16 +179,20 @@ function App() {
                         </ul>
                     </div>
                 </div>
+
+                {isMsgShow == true ? (
+                    <MessageWindow />
+                ) : null}
             </div>
         </>
     );
 }
 
-function MessageWindow() {
+function MessageWindow( props ) {
     return (
         <div className={"message_window"}>
             <div className={"inner"}>
-
+                    aaaaa
             </div>
         </div>
     )
